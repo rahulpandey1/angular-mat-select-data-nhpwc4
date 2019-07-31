@@ -1,0 +1,26 @@
+<form>
+  <mat-form-field>
+    <mat-select placeholder="Clients" [(ngModel)]="selectedValue" name="food" (change)="changeClient($event.value)">
+      <mat-option *ngFor="let client of clients" [value]="client.id">
+        {{client.clientName}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <br/>
+
+    <mat-form-field>
+    <mat-select placeholder="Clients" [(ngModel)]="selectedValue" name="food" (change)="changeClient2($event.value)">
+      <mat-option *ngFor="let client of clients; let i = index;" [value]="i">
+        {{client.clientName}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <p> Selected value: {{selectedValue}} </p>
+</form>
+
+
+<!-- Copyright 2018 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->
